@@ -14,7 +14,7 @@ defineEmits(['close']);
 <template>
   <Modal title="1day1render" :isVisible="isVisible" @close="$emit('close')">
     <div class="oneday-content">
-      <p>> i'm breaking the pattern so the loop doesn't repeat tomorrow, so i'm doing 1 render a day starting aug 24th 2024.</p>
+      <p>> committing to making one render a day for an undefined period of time so i can finally get good at blender lol</p>
       <div class="hero">
         <img src="@/assets/blendermeme.png" alt="blender" />
         <div class="access">
