@@ -4,31 +4,39 @@ import Github from './Github.vue';
 import OneDayOneRender from './OneDayOneRender.vue';
 import Clock from './Clock.vue';  
 import Particle from './Particles.vue';  
-
+import SoundEffects from './SoundEffects.vue';
 
 
 const isGithubVisible = ref(false);
 const isRenderVisible = ref(false);
 const selectedIndex = ref(0);
 const navItems = ref([]);
+const soundEffects = ref(null);
+
 
 function toggleGithub() {
   isGithubVisible.value = !isGithubVisible.value;
+  soundEffects.value.playClickSound();
+
 }
 
 function toggleRender() {
   isRenderVisible.value = !isRenderVisible.value;
+  soundEffects.value.playClickSound();
 }
 
 function handleKeyDown(event) {
   if (event.key === 'ArrowUp') {
     event.preventDefault();
     selectedIndex.value = (selectedIndex.value - 1 + navItems.value.length) % navItems.value.length;
+    soundEffects.value.playNavigationSound();
   } else if (event.key === 'ArrowDown') {
     event.preventDefault();
     selectedIndex.value = (selectedIndex.value + 1) % navItems.value.length;
+    soundEffects.value.playNavigationSound();
   } else if (event.key === 'Enter') {
     navItems.value[selectedIndex.value].click();
+    soundEffects.value.playClickSound();
   }
 }
 
@@ -61,19 +69,21 @@ onUnmounted(() => {
 |__/                                                                                                                 </pre></div>
       <div class="nav-links">
         <ul>
-          <li :class="{ 'selected': selectedIndex === 0 }">
-            <a href="https://www.behance.net/pixelledvisual" target="_blank">> design work</a>
+          <li :class="{ 'selected': selectedIndex === 0 }" @mouseover="soundEffects.playNavigationSound">
+            <a href="https://www.behance.net/pixelledvisual" target="_blank" @click="soundEffects.playClickSound">> design work</a>
           </li>
-          <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleRender">> 1day1render (in progress)</li>
-          <li :class="{ 'selected': selectedIndex === 2 }">
-            <a href="https://x.com/pixelledvisual" target="_blank">> x dot com</a>
+          <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleRender" @mouseover="soundEffects.playNavigationSound">> 1day1render (in progress)</li>
+          <li :class="{ 'selected': selectedIndex === 2 }" @mouseover="soundEffects.playNavigationSound">
+            <a href="https://x.com/pixelledvisual" target="_blank" @click="soundEffects.playClickSound">> x dot com</a>
           </li>
-          <li :class="{ 'selected': selectedIndex === 3 }" @click="toggleGithub">> github</li>
+          <li :class="{ 'selected': selectedIndex === 3 }" @click="toggleGithub" @mouseover="soundEffects.playNavigationSound">> github</li>
         </ul>
       </div>
     </div>
     <Github :isVisible="isGithubVisible" @close="toggleGithub"/>
     <OneDayOneRender :isVisible="isRenderVisible" @close="toggleRender"/>
+    <SoundEffects ref="soundEffects" />
+
   </div>
 </template>
 
