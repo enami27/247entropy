@@ -1,5 +1,7 @@
 <script setup>
 import Modal from './Modal.vue';
+import SoundEffects from './SoundEffects.vue';
+import { ref } from 'vue';
 
 defineProps({
   isVisible: {
@@ -9,6 +11,12 @@ defineProps({
 });
 
 defineEmits(['close']);
+
+const soundEffects = ref(null);
+
+function handleEnterClick() {
+  soundEffects.value.playClickSound();
+}
 </script>
 
 <template>
@@ -19,11 +27,18 @@ defineEmits(['close']);
         <img src="@/assets/blendermeme.png" alt="blender" />
         <div class="access">
           <p>1DAY1RENDER</p>
-          <div>ENTER</div>
+          <div class="enter-button">
+            <a 
+              href="https://www.behance.net/gallery/206619615/1-day-1-render-%28blender-challenge%29" 
+              target="_blank"
+              @click="handleEnterClick"
+            >ENTER</a>
+          </div>
         </div>
       </div>
     </div>
   </Modal>
+  <SoundEffects ref="soundEffects" />
 </template>
 
 <style scoped>
@@ -78,20 +93,27 @@ defineEmits(['close']);
   margin: 0;
 }
 
-.access div {
+.enter-button {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.enter-button a {
   display: inline-block;
   font-size: 24px;
   text-align: center;
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #919DDF;
   color: #111423;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration: none;  /* Remove underline */
+  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
 
-.access div:hover {
+.enter-button a:hover {
   background-color: #ffffff;
+  color: #111423;  /* Maintain text color on hover */
 }
 
 @media (max-width: 1300px) {
@@ -114,7 +136,7 @@ defineEmits(['close']);
     font-size: 30px;
   }
 
-  .access div {
+  .enter-button {
     width: auto;
   }
 }
