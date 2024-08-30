@@ -14,7 +14,7 @@ defineEmits(['close']);
 <template>
   <Modal title="github" :isVisible="isVisible" @close="$emit('close')">
     <div class="github-content">
-      <img src="@/assets/maintenance.png" alt="github" />
+      <img src="@/assets/github.png" alt="github" />
       <p>Under maintenance for the unforeseeable future &lt/3</p>
     </div>
   </Modal>
