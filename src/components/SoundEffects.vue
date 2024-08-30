@@ -27,7 +27,7 @@ defineExpose({ playNavigationSound, playClickSound });
       <source src="@/assets/navigation.mp3" type="audio/mpeg">
     </audio>
     <audio ref="clickSound" preload="auto">
-      <source src="@/assets/click.mp3" type="audio/mpeg">
+      <source src="@/assets/navigation.mp3" type="audio/mpeg">
     </audio>
   </div>
 </template>

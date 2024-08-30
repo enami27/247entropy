@@ -55,7 +55,7 @@ function handleEnterClick() {
 }
 
 .oneday-content > p {
-  color: #919DDF;
+  color: #AB0000;
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 0;
@@ -83,7 +83,7 @@ function handleEnterClick() {
   flex-direction: column;
   width: 50%;
   text-align: left;
-  color: #919DDF;
+  color: #AB0000;
   justify-content: center;
   align-items: center;
 }
@@ -103,17 +103,17 @@ function handleEnterClick() {
   font-size: 24px;
   text-align: center;
   padding: 10px 20px;
-  background-color: #919DDF;
-  color: #111423;
+  background-color: #A62929;
+  color: #200000;
   cursor: pointer;
   text-transform: uppercase;
-  text-decoration: none;  /* Remove underline */
-  transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+  text-decoration: none;  
+  transition: background-color 0.3s ease;  
 }
 
 .enter-button a:hover {
   background-color: #ffffff;
-  color: #111423;  /* Maintain text color on hover */
+  color: #200000; 
 }
 
 @media (max-width: 1300px) {

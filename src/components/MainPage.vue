@@ -7,6 +7,7 @@ import Particle from './Particles.vue';
 import SoundEffects from './SoundEffects.vue';
 
 
+
 const isGithubVisible = ref(false);
 const isRenderVisible = ref(false);
 const selectedIndex = ref(0);
@@ -56,25 +57,26 @@ onUnmounted(() => {
     <Particle />
     <Clock class="clock-position" />
     <div class="nav">
-      <div class="nav-title"><pre>           /$$                     /$$ /$$                 /$$                  /$$                               /$$
-          |__/                    | $$| $$                | $$                 |__/                              | $$
-  /$$$$$$  /$$ /$$   /$$  /$$$$$$ | $$| $$  /$$$$$$   /$$$$$$$       /$$    /$$ /$$  /$$$$$$$ /$$   /$$  /$$$$$$ | $$
- /$$__  $$| $$|  $$ /$$/ /$$__  $$| $$| $$ /$$__  $$ /$$__  $$      |  $$  /$$/| $$ /$$_____/| $$  | $$ |____  $$| $$
-| $$  \ $$| $$ \  $$$$/ | $$$$$$$$| $$| $$| $$$$$$$$| $$  | $$       \  $$/$$/ | $$|  $$$$$$ | $$  | $$  /$$$$$$$| $$
-| $$  | $$| $$  >$$  $$ | $$_____/| $$| $$| $$_____/| $$  | $$        \  $$$/  | $$ \____  $$| $$  | $$ /$$__  $$| $$
-| $$$$$$$/| $$ /$$/\  $$|  $$$$$$$| $$| $$|  $$$$$$$|  $$$$$$$         \  $/   | $$ /$$$$$$$/|  $$$$$$/|  $$$$$$$| $$
-| $$____/ |__/|__/  \__/ \_______/|__/|__/ \_______/ \_______/          \_/    |__/|_______/  \______/  \_______/|__/
-| $$                                                                                                                 
-| $$                                                                                                                 
-|__/                                                                                                                 </pre></div>
+      <div class="nav-title"><pre>
+ ██▓███   ▄▄▄       ██▀███   ▄▄▄      ▓█████▄  ▒█████    ██████ ▓█████ ▓█████▄ 
+▓██░  ██▒▒████▄    ▓██ ▒ ██▒▒████▄    ▒██▀ ██▌▒██▒  ██▒▒██    ▒ ▓█   ▀ ▒██▀ ██▌
+▓██░ ██▓▒▒██  ▀█▄  ▓██ ░▄█ ▒▒██  ▀█▄  ░██   █▌▒██░  ██▒░ ▓██▄   ▒███   ░██   █▌
+▒██▄█▓▒ ▒░██▄▄▄▄██ ▒██▀▀█▄  ░██▄▄▄▄██ ░▓█▄   ▌▒██   ██░  ▒   ██▒▒▓█  ▄ ░▓█▄   ▌
+▒██▒ ░  ░ ▓█   ▓██▒░██▓ ▒██▒ ▓█   ▓██▒░▒████▓ ░ ████▓▒░▒██████▒▒░▒████▒░▒████▓ 
+▒▓▒░ ░  ░ ▒▒   ▓▒█░░ ▒▓ ░▒▓░ ▒▒   ▓▒█░ ▒▒▓  ▒ ░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░░░ ▒░ ░ ▒▒▓  ▒ 
+░▒ ░       ▒   ▒▒ ░  ░▒ ░ ▒░  ▒   ▒▒ ░ ░ ▒  ▒   ░ ▒ ▒░ ░ ░▒  ░ ░ ░ ░  ░ ░ ▒  ▒ 
+░░         ░   ▒     ░░   ░   ░   ▒    ░ ░  ░ ░ ░ ░ ▒  ░  ░  ░     ░    ░ ░  ░ 
+               ░  ░   ░           ░  ░   ░        ░ ░        ░     ░  ░   ░    
+                                       ░                                ░      
+</pre></div>
       <div class="nav-links">
         <ul>
           <li :class="{ 'selected': selectedIndex === 0 }" @mouseover="soundEffects.playNavigationSound">
-            <a href="https://www.behance.net/pixelledvisual" target="_blank" @click="soundEffects.playClickSound">> design work</a>
+            <a href="https://www.behance.net/247entropy" target="_blank" @click="soundEffects.playClickSound">> design work</a>
           </li>
           <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleRender" @mouseover="soundEffects.playNavigationSound">> 1day1render (in progress)</li>
           <li :class="{ 'selected': selectedIndex === 2 }" @mouseover="soundEffects.playNavigationSound">
-            <a href="https://x.com/pixelledvisual" target="_blank" @click="soundEffects.playClickSound">> x dot com</a>
+            <a href="https://x.com/247entropy" target="_blank" @click="soundEffects.playClickSound">> x dot com</a>
           </li>
           <li :class="{ 'selected': selectedIndex === 3 }" @click="toggleGithub" @mouseover="soundEffects.playNavigationSound">> github</li>
         </ul>
@@ -106,13 +108,13 @@ onUnmounted(() => {
   align-items: center;
   flex-wrap: wrap;
   overflow-y: auto;
-  color:#919DDF;
+  color:#A62929;
   font-family: "VT323", monospace;
 
 }
 
 .container * {
-  text-shadow: 0px 0px 5px #919DDF;
+  text-shadow: 0px 0px 5px #A62929;
   ;
 }
 
@@ -123,7 +125,7 @@ onUnmounted(() => {
 }
 
 .nav-title {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 7vh;
 }
 
@@ -149,19 +151,19 @@ li a {
 }
 
 li:hover, li:focus {
-  background-color: #919DDF;
-  color: #111423;
+  background-color: #A62929;
+  color: #200000;
   text-decoration: underline;
 }
 
 .nav-links li.selected {
-  background-color: #919DDF;
-  color: #111423;
+  background-color: #A62929;
+  color: #200000;
   text-decoration: underline;
 }
 
 .nav-links li.selected a {
-  color: #111423;
+  color: #200000;
 }
 
 li:last-child {
@@ -171,7 +173,7 @@ li:last-child {
 
 @media (max-width:1300px) {
   .nav-title {
-    font-size: 5px;
+    font-size: 6px;
     margin-top: 4vh;
   }
 
