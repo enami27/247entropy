@@ -125,7 +125,6 @@ onUnmounted(() => {
 
 .nav-title {
   font-size: 12px;
-  margin-bottom: 7vh;
 }
 
 .nav-links {
