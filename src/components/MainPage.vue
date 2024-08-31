@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted} from 'vue';
 import Github from './Github.vue';
-import OneDayOneRender from './OneDayOneRender.vue';
+import Design from './Design.vue';
 import Clock from './Clock.vue';  
 import Particle from './Particles.vue';  
 import SoundEffects from './SoundEffects.vue';
@@ -9,7 +9,7 @@ import SoundEffects from './SoundEffects.vue';
 
 
 const isGithubVisible = ref(false);
-const isRenderVisible = ref(false);
+const isDesignVisible = ref(false);
 const selectedIndex = ref(0);
 const navItems = ref([]);
 const soundEffects = ref(null);
@@ -21,8 +21,8 @@ function toggleGithub() {
 
 }
 
-function toggleRender() {
-  isRenderVisible.value = !isRenderVisible.value;
+function toggleDesign() {
+  isDesignVisible.value = !isDesignVisible.value;
   soundEffects.value.playClickSound();
 }
 
@@ -72,9 +72,8 @@ onUnmounted(() => {
       <div class="nav-links">
         <ul>
           <li :class="{ 'selected': selectedIndex === 0 }" @mouseover="soundEffects.playNavigationSound">
-            <a href="https://www.behance.net/247entropy" target="_blank" @click="soundEffects.playClickSound">> design work</a>
           </li>
-          <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleRender" @mouseover="soundEffects.playNavigationSound">> 1day1render (in progress)</li>
+          <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleDesign" @mouseover="soundEffects.playNavigationSound">> design work</li>
           <li :class="{ 'selected': selectedIndex === 2 }" @mouseover="soundEffects.playNavigationSound">
             <a href="https://x.com/247entropy" target="_blank" @click="soundEffects.playClickSound">> x dot com</a>
           </li>
@@ -83,7 +82,7 @@ onUnmounted(() => {
       </div>
     </div>
     <Github :isVisible="isGithubVisible" @close="toggleGithub"/>
-    <OneDayOneRender :isVisible="isRenderVisible" @close="toggleRender"/>
+    <Design :isVisible="isDesignVisible" @close="toggleDesign"/>
     <SoundEffects ref="soundEffects" />
 
   </div>

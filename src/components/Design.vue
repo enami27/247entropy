@@ -20,16 +20,16 @@ function handleEnterClick() {
 </script>
 
 <template>
-  <Modal title="1day1render" :isVisible="isVisible" @close="$emit('close')">
-    <div class="oneday-content">
-      <p>> committing to making one render a day for an undefined period of time so i can finally get good at blender lol</p>
+  <Modal title="design" :isVisible="isVisible" @close="$emit('close')">
+    <div class="design-content">
+      <p>> mainly posters and branding work, currently learning 3d</p>
       <div class="hero">
         <img src="@/assets/blendermeme.png" alt="blender" />
         <div class="access">
-          <p>1DAY1RENDER</p>
+          <p>design work</p>
           <div class="enter-button">
             <a 
-              href="https://www.behance.net/gallery/206619615/1-day-1-render-%28blender-challenge%29" 
+              href="https://www.behance.net/247entropy" 
               target="_blank"
               @click="handleEnterClick"
             >ENTER</a>
@@ -42,7 +42,7 @@ function handleEnterClick() {
 </template>
 
 <style scoped>
-.oneday-content {
+.design-content {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -54,7 +54,7 @@ function handleEnterClick() {
   height: 100%;
 }
 
-.oneday-content > p {
+.design-content > p {
   color: #AB0000;
   font-size: 24px;
   margin-bottom: 20px;
