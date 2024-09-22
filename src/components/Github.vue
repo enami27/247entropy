@@ -39,7 +39,7 @@ defineEmits(['close']);
 
 .github-content p {
   font-size: 28px;
-  color: #A62929;
+  color: #d9b5ff;
   text-align: center;
   max-width: 100%;
   word-wrap: break-word;

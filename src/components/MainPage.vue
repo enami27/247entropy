@@ -103,13 +103,13 @@ onUnmounted(() => {
   align-items: center;
   flex-wrap: wrap;
   overflow-y: auto;
-  color:#A62929;
+  color:#d9b5ff;
   font-family: "VT323", monospace;
 
 }
 
 .container * {
-  text-shadow: 0px 0px 5px #A62929;
+  text-shadow: 0px 0px 5px #d9b5ff;
   ;
 }
 
@@ -145,19 +145,19 @@ li a {
 }
 
 li:hover, li:focus {
-  background-color: #A62929;
-  color: #200000;
+  background-color: #d9b5ff;
+  color: #0d0026;
   text-decoration: underline;
 }
 
 .nav-links li.selected {
-  background-color: #A62929;
-  color: #200000;
+  background-color: #d9b5ff;
+  color: #0d0026;
   text-decoration: underline;
 }
 
 .nav-links li.selected a {
-  color: #200000;
+  color: #0d0026;
 }
 
 li:last-child {

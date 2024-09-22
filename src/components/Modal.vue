@@ -97,13 +97,13 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #200000;
-  border: 2px solid #AB0000;
+  background-color: #0d0026;
+  border: 2px solid #d9b5ff;
   width: 60vw;
   max-width: 800px;
   height: 75vh;
   z-index: 10;
-  box-shadow: 0px 0px 8px #AB0000;
+  box-shadow: 0px 0px 8px #d9b5ff;
   user-select: none;
 }
 
@@ -114,15 +114,15 @@ onUnmounted(() => {
   width: 100%;
   height: 50px;
   min-height: 50px;
-  border-bottom: 2px solid #A62929;
+  border-bottom: 2px solid #d9b5ff;
   padding: 0 2vh;
   box-sizing: border-box;
-  box-shadow: 0px 0px 8px #A62929;
+  box-shadow: 0px 0px 8px #d9b5ff;
   cursor: grab;
 }
 
 .modal-bar p {
-  color: #A62929;
+  color: #d9b5ff;
   font-size: 24px;
   cursor:default;
   margin: 0;
