@@ -103,14 +103,8 @@ onUnmounted(() => {
   align-items: center;
   flex-wrap: wrap;
   overflow-y: auto;
-  color:#d9b5ff;
   font-family: "VT323", monospace;
 
-}
-
-.container * {
-  text-shadow: 0px 0px 5px #d9b5ff;
-  ;
 }
 
 .nav {
@@ -121,10 +115,14 @@ onUnmounted(() => {
 
 .nav-title {
   font-size: 12px;
+  color: #110870;
+  text-shadow: 0px 0px 5px #110870;
 }
 
 .nav-links {
   font-size: 28px;
+  color: #45a3ff;
+  text-shadow: 0px 0px 2px #45a3ff;
 }
 
 
@@ -145,19 +143,19 @@ li a {
 }
 
 li:hover, li:focus {
-  background-color: #d9b5ff;
-  color: #0d0026;
+  background-color: #45a3ff;
+  color: #d7f1ff;
   text-decoration: underline;
 }
 
 .nav-links li.selected {
-  background-color: #d9b5ff;
-  color: #0d0026;
+  background-color: #45a3ff;
+  color: #d7f1ff;
   text-decoration: underline;
 }
 
 .nav-links li.selected a {
-  color: #0d0026;
+  color: #d7f1ff;
 }
 
 li:last-child {

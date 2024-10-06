@@ -4,10 +4,10 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const canvas = ref(null);
 
 const particles = [];
-const particleCount = 100;
-const particleColor = '#d9b5ff';
+const particleCount = 200;
+const particleColor = '#45a3ff';
 const particleSize = 2;
-const particleSpeed = 0.6;
+const particleSpeed = 0.7;
 
 function createParticles() {
   for (let i = 0; i < particleCount; i++) {
@@ -80,6 +80,6 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 </style>

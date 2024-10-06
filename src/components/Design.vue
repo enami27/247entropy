@@ -55,7 +55,8 @@ function handleEnterClick() {
 }
 
 .design-content > p {
-  color: #d9b5ff;
+  color: #110870;
+  text-shadow: 0px 0px 2px #110870;
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 0;
@@ -83,7 +84,8 @@ function handleEnterClick() {
   flex-direction: column;
   width: 50%;
   text-align: left;
-  color: #d9b5ff;
+  color: #110870;
+  text-shadow: 0px 0px 2px #110870;
   justify-content: center;
   align-items: center;
 }
@@ -96,6 +98,7 @@ function handleEnterClick() {
 .enter-button {
   display: inline-block;
   margin-top: 10px;
+  box-shadow: 0px 0px 5px #110870;
 }
 
 .enter-button a {
@@ -103,8 +106,9 @@ function handleEnterClick() {
   font-size: 24px;
   text-align: center;
   padding: 10px 20px;
-  background-color: #d9b5ff;
-  color: #0d0026;
+  background-color: #110870;
+  color: #d7f1ff;
+  text-shadow: 0px 0px 2px #d7f1ff;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;  
@@ -112,8 +116,11 @@ function handleEnterClick() {
 }
 
 .enter-button a:hover {
-  background-color: #d9b5ff;
-  color: #0d0026; 
+  background-color: #45a3ff;
+  color: #d7f1ff; 
+  box-shadow: 0px 0px 5px #45a3ff;
+
+  
 }
 
 @media (max-width: 1300px) {
