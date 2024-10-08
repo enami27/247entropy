@@ -74,7 +74,7 @@ onUnmounted(() => {
           <li :class="{ 'selected': selectedIndex === 2 }" @mouseover="soundEffects.playNavigationSound">
             <a href="https://x.com/247entropy" target="_blank" @click="soundEffects.playClickSound">> x dot com</a>
           </li>
-          <li :class="{ 'selected': selectedIndex === 3 }" @click="toggleGithub" @mouseover="soundEffects.playNavigationSound">> github</li>
+          <!-- <li :class="{ 'selected': selectedIndex === 3 }" @click="toggleGithub" @mouseover="soundEffects.playNavigationSound">> github</li> -->
         </ul>
       </div>
     </div>
