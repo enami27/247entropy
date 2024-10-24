@@ -5,7 +5,7 @@ const canvas = ref(null);
 
 const particles = [];
 const particleCount = 200;
-const particleColor = '#45a3ff';
+const particleColor = '#D8D8D8';
 const particleSize = 2;
 const particleSpeed = 0.7;
 

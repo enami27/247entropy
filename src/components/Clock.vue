@@ -28,8 +28,8 @@ onUnmounted(() => {
 .clock {
   font-family: "VT323", monospace;
   font-size: 32px;
-  color: #45a3ff;
-  text-shadow: 0px 0px 5px #45a3ff;
+  color: #D8D8D8;
+  text-shadow: 0px 0px 5px #D8D8D8;
   text-align: right;
   padding: 1.4vh;
 }

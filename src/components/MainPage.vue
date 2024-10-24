@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, onUnmounted} from 'vue';
-import Github from './Github.vue';
 import Design from './Design.vue';
 import Clock from './Clock.vue';  
 import Particle from './Particles.vue';  
@@ -115,14 +114,14 @@ onUnmounted(() => {
 
 .nav-title {
   font-size: 12px;
-  color: #110870;
-  text-shadow: 0px 0px 5px #110870;
+  color: #D8D8D8;
+  text-shadow: 0px 0px 5px #D8D8D8;
 }
 
 .nav-links {
   font-size: 28px;
-  color: #45a3ff;
-  text-shadow: 0px 0px 2px #45a3ff;
+  color: #D8D8D8;
+  text-shadow: 0px 0px 2px #D8D8D8;
 }
 
 
@@ -143,19 +142,19 @@ li a {
 }
 
 li:hover, li:focus {
-  background-color: #45a3ff;
-  color: #d7f1ff;
+  background-color: #D8D8D8;
+  color: #101010;
   text-decoration: underline;
 }
 
 .nav-links li.selected {
-  background-color: #45a3ff;
-  color: #d7f1ff;
+  background-color: #D8D8D8;
+  color: #101010;
   text-decoration: underline;
 }
 
 .nav-links li.selected a {
-  color: #d7f1ff;
+  color: #101010;
 }
 
 li:last-child {
@@ -163,7 +162,7 @@ li:last-child {
 }
 
 
-@media (max-width:1300px) {
+@media (max-width:900px) {
   .nav-title {
     font-size: 6px;
     margin-top: 4vh;
