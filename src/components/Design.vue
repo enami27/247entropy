@@ -1,0 +1,199 @@
+<script setup>
+import Modal from './Modal.vue';
+import SoundEffects from './SoundEffects.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+
+defineProps({
+  isVisible: {
+    type: Boolean,
+    required: true,
+  },
+});
+
+defineEmits(['close']);
+
+const soundEffects = ref(null);
+const works = ref([
+  {
+    title: "orebella",
+    image: new URL('@/assets/posters/3.png', import.meta.url).href,
+  },
+  {
+    title: "hurry up now",
+    image: new URL('@/assets/posters/1.png', import.meta.url).href,
+  },
+  {
+    title: "heaven knows",
+    image: new URL('@/assets/posters/2.png', import.meta.url).href,
+  },
+  {
+    title: "ca eu/uk tour",
+    image: new URL('@/assets/posters/7.png', import.meta.url).href,
+  },
+  {
+    title: "let the good times roll",
+    image: new URL('@/assets/posters/4.png', import.meta.url).href,
+  },
+  {
+    title: "america's favorite dessert",
+    image: new URL('@/assets/posters/5.png', import.meta.url).href,
+  },
+  {
+    title: "gameboy color 98",
+    image: new URL('@/assets/posters/6.png', import.meta.url).href,
+  },
+  {
+    title: "naked wolfe ad",
+    image: new URL('@/assets/posters/8.png', import.meta.url).href,
+  },
+  {
+    title: "vivienne westwood",
+    image: new URL('@/assets/posters/9.png', import.meta.url).href,
+  },
+  {
+    title: "margiela 2009 glass heels",
+    image: new URL('@/assets/posters/14.png', import.meta.url).href,
+  },
+  {
+    title: "margiela replica",
+    image: new URL('@/assets/posters/10.png', import.meta.url).href,
+  },
+  {
+    title: "cdg runway",
+    image: new URL('@/assets/posters/13.png', import.meta.url).href,
+  },
+  {
+    title: "cdg parfums - mirroir by kaws",
+    image: new URL('@/assets/posters/12.png', import.meta.url).href,
+  },
+  {
+    title: "chicago aj1",
+    image: new URL('@/assets/posters/17.png', import.meta.url).href,
+  },
+  {
+    title: "blazer 77",
+    image: new URL('@/assets/posters/18.png', import.meta.url).href,
+  },
+  {
+    title: "dunks",
+    image: new URL('@/assets/posters/20.png', import.meta.url).href,
+  },
+  {
+    title: "nana osaki",
+    image: new URL('@/assets/posters/16.png', import.meta.url).href,
+  },
+  {
+    title: "neon genesis evangelion",
+    image: new URL('@/assets/posters/15.png', import.meta.url).href,
+  },
+]);
+
+
+const currentIndex = ref(0);
+
+function prevWork() {
+  soundEffects.value.playClickSound();
+  currentIndex.value = (currentIndex.value - 1 + works.value.length) % works.value.length;
+}
+
+function nextWork() {
+  soundEffects.value.playClickSound();
+  currentIndex.value = (currentIndex.value + 1) % works.value.length;
+}
+
+function handleKeydown(event) {
+  if (event.key === 'ArrowLeft') {
+    prevWork();
+  } else if (event.key === 'ArrowRight') {
+    nextWork();
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown);
+
+  // Preload all images
+  works.value.forEach(work => {
+    const img = new Image();
+    img.src = work.image;
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown);
+});
+</script>
+
+<template>
+  <Modal title="design" :isVisible="isVisible" @close="$emit('close')">
+    <div class="design-showcase">
+      <div class="arrow left" @click="prevWork"><span>&lt;</span></div>
+      <div class="work-content">
+        <h2 class="work-title">{{ works[currentIndex].title }}</h2>
+        <img :src="works[currentIndex].image" alt="Design Work" class="work-image" />
+      </div>
+      <div class="arrow right" @click="nextWork"><span>&gt;</span></div>
+    </div>
+  </Modal>
+  <SoundEffects ref="soundEffects" />
+</template>
+
+
+<style scoped>
+
+.work-title {
+  font-size: 32px;
+  color: #d8d8d8;
+  text-shadow: 0px 0px 2px #d8d8d8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.design-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 36px;
+  color: #d8d8d8;
+  user-select: none;
+  width: 50px;
+  text-align: center;
+  line-height: 100%;
+}
+
+.arrow.left {
+  margin-left: 10px;
+}
+
+.arrow.right {
+  margin-right: 10px;
+}
+
+.work-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.work-image {
+  height: 350px;  /* Fixed height */
+  width: auto;    /* Maintain aspect ratio */
+  max-width: 100%;  /* Ensure it fits within container */
+  object-fit: contain;  /* Preserve image proportions */
+  margin: 10px 0;
+  box-shadow: 0px 0px 8px #d8d8d8;
+}
+.tools {
+  margin-top: 20px;
+}
+
+
+</style>
+
