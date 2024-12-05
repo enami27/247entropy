@@ -86,6 +86,21 @@ const works = ref([
     title: "neon genesis evangelion",
     image: new URL('@/assets/posters/15.png', import.meta.url).href,
   },
+
+  {
+    title: "3d render - 1",
+    image: new URL('@/assets/posters/21.png', import.meta.url).href,
+  },
+
+  {
+    title: "3d render - 2",
+    image: new URL('@/assets/posters/22.png', import.meta.url).href,
+  },
+
+  {
+    title: "3d render - 3",
+    image: new URL('@/assets/posters/23.png', import.meta.url).href,
+  },
 ]);
 
 
