@@ -15,6 +15,11 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "hunter x hunter",
+    image: new URL('@/assets/posters/25.png', import.meta.url).href,
+  },
+
+{
     title: "kakegurui",
     image: new URL('@/assets/posters/24.png', import.meta.url).href,
   },
