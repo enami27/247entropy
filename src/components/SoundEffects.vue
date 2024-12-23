@@ -6,7 +6,7 @@ const navigationSound = ref(null);
 const clickSound = ref(null);
 
 // Volume level (0.0 to 1.0)
-const volumeLevel = 0.5;
+const volumeLevel = 1;
 
 function playNavigationSound() {
   if (navigationSound.value) {

@@ -8,19 +8,12 @@ import SoundEffects from './SoundEffects.vue';
 import { activeComponent } from './focusState';
 
 
-
 const isDesignVisible = ref(false);
 const isAboutVisible = ref(false);
 const selectedIndex = ref(0);
 const navItems = ref([]);
 const soundEffects = ref(null);
 
-
-function toggleGithub() {
-  isGithubVisible.value = !isGithubVisible.value;
-  soundEffects.value.playClickSound();
-
-}
 
 function toggleAbout() {
   isAboutVisible.value = !isAboutVisible.value;
@@ -92,14 +85,41 @@ onUnmounted(() => {
           <li :class="{ 'selected': selectedIndex === 2 }" @click="toggleAbout" @mouseover="soundEffects.playNavigationSound">> lore + links</li>
         </ul>
       </div>
+      <div class="contact-email">
+      <a href="mailto:247entropy@gmail.com" @mouseover="soundEffects?.playNavigationSound">247entropy@gmail.com</a> for design inquiries
+    </div>
     </div>
     <Design :isVisible="isDesignVisible" @close="toggleDesign"/>
     <About :isVisible="isAboutVisible" @close="toggleAbout"/>
     <SoundEffects ref="soundEffects" />
   </div>
+  
 </template>
 
 <style scoped>
+
+.contact-email {
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  color: #D8D8D8;
+  text-shadow: 0px 0px 2px #D8D8D8;
+  text-align: center;
+  user-select: all;
+}
+
+.contact-email a {
+  color: #D8D8D8;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  background-color: #D8D8D8;
+  color: #101010;
+}
+
 .clock-position {
   position: absolute;
   top: 2vh;
@@ -186,6 +206,10 @@ li:last-child {
   .nav-title {
     font-size: 6px;
     margin-top: 4vh;
+  }
+
+  .contact-email {
+    font-size: 24px;
   }
 
 }
