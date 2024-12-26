@@ -68,6 +68,7 @@ onUnmounted(() => {
     <Particle />
     <Clock class="clock-position" />
     <div class="nav">
+      <p class="desc">freelance graphic designer, applied math & finance student</p>
       <div class="nav-title"><pre>
 ██████  ██   ██ ███████ ███████ ███    ██ ████████ ██████   ██████  ██████  ██    ██ 
      ██ ██   ██      ██ ██      ████   ██    ██    ██   ██ ██    ██ ██   ██  ██  ██  
@@ -82,11 +83,11 @@ onUnmounted(() => {
           <li :class="{ 'selected': selectedIndex === 0 }" @mouseover="soundEffects.playNavigationSound">
           </li>
           <li :class="{ 'selected': selectedIndex === 1 }" @click="toggleDesign" @mouseover="soundEffects.playNavigationSound">> design work</li>
-          <li :class="{ 'selected': selectedIndex === 2 }" @click="toggleAbout" @mouseover="soundEffects.playNavigationSound">> lore + links</li>
+          <li :class="{ 'selected': selectedIndex === 2 }" @click="toggleAbout" @mouseover="soundEffects.playNavigationSound">> links</li>
         </ul>
       </div>
       <div class="contact-email">
-      <a href="mailto:247entropy@gmail.com" @mouseover="soundEffects?.playNavigationSound">247entropy@gmail.com</a> for design inquiries
+      <a href="mailto:247entropy@gmail.com" @mouseover="soundEffects?.playNavigationSound">commission me!</a>
     </div>
     </div>
     <Design :isVisible="isDesignVisible" @close="toggleDesign"/>
@@ -98,12 +99,20 @@ onUnmounted(() => {
 
 <style scoped>
 
+.desc {
+  font-size: 28px;
+  color: #D8D8D8;
+  text-shadow: 0px 0px 5px #D8D8D8;
+  user-select: none; 
+  margin-bottom: 2vh;
+}
+
 .contact-email {
   position: fixed;
   bottom: 5vh;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 26px;
+  font-size: 32px;
   color: #D8D8D8;
   text-shadow: 0px 0px 2px #D8D8D8;
   text-align: center;
@@ -191,6 +200,7 @@ li:hover, li:focus {
   background-color: #D8D8D8;
   color: #101010;
   text-decoration: none;
+
 }
 
 .nav-links li.selected a {

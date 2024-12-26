@@ -1,16 +1,13 @@
 <script setup>
 import { ref } from 'vue';
 
-// References to the audio elements
 const navigationSound = ref(null);
 const clickSound = ref(null);
-
-// Volume level (0.0 to 1.0)
 const volumeLevel = 1;
 
 function playNavigationSound() {
   if (navigationSound.value) {
-    navigationSound.value.volume = volumeLevel; // Set volume
+    navigationSound.value.volume = volumeLevel;
     navigationSound.value.currentTime = 0;
     navigationSound.value.play();
   }
@@ -18,12 +15,18 @@ function playNavigationSound() {
 
 function playClickSound() {
   if (clickSound.value) {
-    clickSound.value.volume = volumeLevel; // Set volume
+    clickSound.value.volume = volumeLevel;
     clickSound.value.currentTime = 0;
     clickSound.value.play();
   }
 }
 
-// Expose methods for parent component
 defineExpose({ playNavigationSound, playClickSound });
 </script>
+
+<template>
+  <div class="hidden">
+    <audio ref="navigationSound" src="@assets/navigation.mp3" preload="auto"></audio>
+    <audio ref="clickSound" src="@assets/navigation.mp3" preload="auto"></audio>
+  </div>
+</template>

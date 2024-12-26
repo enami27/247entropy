@@ -66,23 +66,19 @@ onUnmounted(() => {
 });
 </script>
 
-
 <template>
-  <Modal title="lore + links" :isVisible="isVisible" @close="$emit('close')">
+  <Modal title="links" :isVisible="isVisible" @close="$emit('close')">
     <div class="about-content">
-      <div class="section-content">
-        <p>> freelance graphic designer, also an academiacel studying cs, math and finance</p>
-        <ul class="link-list">
-          <li
-            v-for="(link, index) in links"
-            :key="index"
-            :class="{ 'selected': selectedIndex === index }"
-            @click="handleContactClick(link)"
-          >
-            > {{ link.label }}
-          </li>
-        </ul>
-      </div>
+      <ul class="link-list">
+        <li
+          v-for="(link, index) in links"
+          :key="index"
+          :class="{ 'selected': selectedIndex === index }"
+          @click="handleContactClick(link)"
+        >
+          > {{ link.label }}
+        </li>
+      </ul>
     </div>
   </Modal>
   <SoundEffects ref="soundEffects" />
@@ -90,62 +86,35 @@ onUnmounted(() => {
 
 <style scoped>
 .about-content {
+  width: 100%;
   padding: 2vh;
   color: #d8d8d8;
-  display: flex;
-  align-items: left; 
-  justify-content: left;
-}
-
-.section-content {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: left;
-  gap: 20px;
-}
-
-.section-content p {
-  font-size: 28px;
-  text-shadow: 0px 0px 2px #d8d8d8;
-  margin: 0;
-  line-height: 1.4;
-  text-align: left;
 }
 
 .link-list {
   list-style-type: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 0;
   font-size: 28px;
+  width: 100%;
   color: #d8d8d8;
   text-shadow: 0px 0px 2px #d8d8d8;
 }
 
 .link-list li {
+  width: 100%;
   margin-bottom: 10px;
+  padding: 2px;
   cursor: pointer;
 }
 
-.link-list li:hover {
-  background-color: #d8d8d8;
-  color: #101010;
-}
-
+.link-list li:hover,
 .link-list li.selected {
   background-color: #d8d8d8;
   color: #101010;
-  text-decoration: none;
 }
 
 @media (max-width: 768px) {
-  .section-content p {
-    font-size: 20px;
-  }
   .link-list {
     font-size: 20px;
   }
