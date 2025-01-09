@@ -15,6 +15,10 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "levi (attack on titan)",
+    image: new URL('@/assets/posters/28.png', import.meta.url).href,
+  },
+{
     title: "darling in the franxx",
     image: new URL('@/assets/posters/27.png', import.meta.url).href,
   },
