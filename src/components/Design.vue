@@ -15,6 +15,14 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "yoruiichi (bleach)",
+    image: new URL('@/assets/posters/30.png', import.meta.url).href,
+  },
+  {
+    title: "prison school",
+    image: new URL('@/assets/posters/29.png', import.meta.url).href,
+  },
+{
     title: "prison school",
     image: new URL('@/assets/posters/29.png', import.meta.url).href,
   },
