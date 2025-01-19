@@ -15,7 +15,11 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
-    title: "yoruiichi (bleach)",
+    title: "misato katsuragi",
+    image: new URL('@/assets/posters/31.png', import.meta.url).href,
+  },
+{
+    title: "yoruichi (bleach)",
     image: new URL('@/assets/posters/30.png', import.meta.url).href,
   },
   {
@@ -63,10 +67,6 @@ const works = ref([
   {
     title: "ca eu/uk tour",
     image: new URL('@/assets/posters/7.png', import.meta.url).href,
-  },
-  {
-    title: "let the good times roll",
-    image: new URL('@/assets/posters/4.png', import.meta.url).href,
   },
   {
     title: "america's favorite dessert",
