@@ -68,7 +68,7 @@ onUnmounted(() => {
     <Particle />
     <Clock class="clock-position" />
     <div class="nav">
-      <p class="desc">freelance graphic designer, applied math & finance student</p>
+      <p class="desc"></p>
       <div class="nav-title"><pre>
 ██████  ██   ██ ███████ ███████ ███    ██ ████████ ██████   ██████  ██████  ██    ██ 
      ██ ██   ██      ██ ██      ████   ██    ██    ██   ██ ██    ██ ██   ██  ██  ██  
