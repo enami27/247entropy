@@ -15,6 +15,10 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "devilman crybaby",
+    image: new URL('@/assets/posters/32.png', import.meta.url).href,
+  },
+{
     title: "misato katsuragi",
     image: new URL('@/assets/posters/31.png', import.meta.url).href,
   },
