@@ -14,6 +14,10 @@ defineEmits(['close']);
 
 const soundEffects = ref(null);
 const works = ref([
+  {
+    title: "the big o",
+    image: new URL('@/assets/posters/35.png', import.meta.url).href,
+  },
 {
     title: "alya",
     image: new URL('@/assets/posters/34.png', import.meta.url).href,
@@ -77,10 +81,6 @@ const works = ref([
     image: new URL('@/assets/posters/2.png', import.meta.url).href,
   },
   {
-    title: "ca eu/uk tour",
-    image: new URL('@/assets/posters/7.png', import.meta.url).href,
-  },
-  {
     title: "america's favorite dessert",
     image: new URL('@/assets/posters/5.png', import.meta.url).href,
   },
@@ -133,20 +133,6 @@ const works = ref([
     image: new URL('@/assets/posters/15.png', import.meta.url).href,
   },
 
-  {
-    title: "3d render - 1",
-    image: new URL('@/assets/posters/21.png', import.meta.url).href,
-  },
-
-  {
-    title: "3d render - 2",
-    image: new URL('@/assets/posters/22.png', import.meta.url).href,
-  },
-
-  {
-    title: "3d render - 3",
-    image: new URL('@/assets/posters/23.png', import.meta.url).href,
-  },
 ]);
 
 
