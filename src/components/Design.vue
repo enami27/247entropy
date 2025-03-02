@@ -14,6 +14,13 @@ defineEmits(['close']);
 
 const soundEffects = ref(null);
 const works = ref([
+{
+    title: "General Trajectory",
+    linkText: "(view full project here)",
+    projectUrl: "https://www.behance.net/gallery/220512329/General-Trajectory-Visual-Identity-Logo-design",  // Replace with your actual URL
+    hasLink: true,
+    image: new URL('@/assets/posters/36.png', import.meta.url).href,
+  },
   {
     title: "the big o",
     image: new URL('@/assets/posters/35.png', import.meta.url).href,
@@ -136,6 +143,7 @@ const works = ref([
 ]);
 
 
+
 const currentIndex = ref(0);
 
 function prevWork() {
@@ -176,7 +184,16 @@ onUnmounted(() => {
     <div class="design-showcase">
       <div class="arrow left" @click="prevWork"><span>&lt;</span></div>
       <div class="work-content">
-        <h2 class="work-title">{{ works[currentIndex].title }}</h2>
+        <div class="title-container">
+          <h2 class="work-title">{{ works[currentIndex].title }}</h2>
+          <a v-if="works[currentIndex].hasLink" 
+             :href="works[currentIndex].projectUrl" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="project-link">
+            {{ works[currentIndex].linkText }}
+          </a>
+        </div>
         <img :src="works[currentIndex].image" alt="Design Work" class="work-image" />
       </div>
       <div class="arrow right" @click="nextWork"><span>&gt;</span></div>
@@ -187,13 +204,32 @@ onUnmounted(() => {
 
 
 <style scoped>
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
 .work-title {
   font-size: 32px;
   color: #d8d8d8;
   text-shadow: 0px 0px 2px #d8d8d8;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   text-align: center;
+}
+
+.project-link {
+  font-size: 20px;
+  color: #a8d8ff;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.project-link:hover {
+  color: #ffffff;
+  text-shadow: 0px 0px 4px #a8d8ff;
 }
 
 .design-showcase {
@@ -240,7 +276,4 @@ onUnmounted(() => {
 .tools {
   margin-top: 20px;
 }
-
-
 </style>
-
