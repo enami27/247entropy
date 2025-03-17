@@ -14,6 +14,10 @@ defineEmits(['close']);
 
 const soundEffects = ref(null);
 const works = ref([
+{
+    title: "i am music",
+    image: new URL('@/assets/posters/38.png', import.meta.url).href,
+  },
   {
     title: "yeezus",
     image: new URL('@/assets/posters/37.png', import.meta.url).href,
