@@ -15,6 +15,10 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "distraction - kehlani",
+    image: new URL('@/assets/posters/39.png', import.meta.url).href,
+  },
+{
     title: "i am music",
     image: new URL('@/assets/posters/38.png', import.meta.url).href,
   },
