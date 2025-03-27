@@ -16,6 +16,10 @@ const soundEffects = ref(null);
 const works = ref([
 {
     title: "newjeans",
+    image: new URL('@/assets/posters/41.png', import.meta.url).href,
+  },
+{
+    title: "newjeans",
     image: new URL('@/assets/posters/40.png', import.meta.url).href,
   },
 {
