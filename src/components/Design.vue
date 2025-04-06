@@ -15,6 +15,10 @@ defineEmits(['close']);
 const soundEffects = ref(null);
 const works = ref([
 {
+    title: "revy (black lagoon)",
+    image: new URL('@/assets/posters/45.png', import.meta.url).href,
+  },
+{
     title: "beabadoobee",
     image: new URL('@/assets/posters/44.png', import.meta.url).href,
   },
